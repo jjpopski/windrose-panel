@@ -393,7 +393,7 @@ System.register(["app/plugins/sdk", "lodash", "jquery", "./lib/plotly.min"], fun
                                 var lower_level = speed_levels[bin_idx];
                                 var upper_level = speed_levels[bin_idx + 1];
                                 trace['name'] =
-                                    lower_level.toString() + ' - ' + upper_level.toString() + ' m/s';
+                                    lower_level.toString() + ' - ' + upper_level.toString() + ' Km/h';
                                 trace['type'] = 'scatterpolar';
                                 trace['mode'] = 'lines';
                                 trace['theta'] = thetas;
@@ -448,7 +448,7 @@ System.register(["app/plugins/sdk", "lodash", "jquery", "./lib/plotly.min"], fun
                     };
                     this.panel.pconfig.layout.showlegend = legendmapping[plot_type];
                     var radialaxismapping = {
-                        scatter: { ticksuffix: ' m/s', angle: 90 },
+                        scatter: { ticksuffix: ' Km/h', angle: 90 },
                         windrose: { ticksuffix: '%', angle: 90 },
                     };
                     this.panel.pconfig.layout.polar.radialaxis = radialaxismapping[plot_type];
@@ -461,7 +461,7 @@ System.register(["app/plugins/sdk", "lodash", "jquery", "./lib/plotly.min"], fun
                     elem.on('mousemove', function (evt) {
                         _this.mouse = evt;
                     });
-                    ctrl.events.on("render", function () {
+                    ctrl.events.on('render', function () {
                         ctrl.renderingCompleted();
                     });
                 };
